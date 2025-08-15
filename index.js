@@ -103,9 +103,11 @@ function waitForAnimation(element, animationName) {
 }
 
 async function flipCard(card) {
+    lockBoard = true;
     card.classList.add('flip');
     await waitForAnimation(card, 'flipCard'); 
     card.classList.remove('flip');
+    lockBoard = false;
 }
 
 
